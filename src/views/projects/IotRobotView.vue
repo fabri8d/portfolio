@@ -430,8 +430,8 @@ const n8nImages = [
   },
   {
     src:   '/projects/iot-robot/n8n-telegram-conexion.png',
-    label: 'Conexión con Telegram',
-    desc:  'Configuración del MQTT Trigger y las credenciales del bot PepeAire_bot para recibir y enviar mensajes.',
+    label: 'Monitor de conexión',
+    desc:  'Chequea cada minuto si el robot envió una medición. Si no hay actividad en 5 minutos, notifica "robot desconectado". En cuanto llega una nueva medición, notifica "robot reconectado".',
   },
   {
     src:   '/projects/iot-robot/n8n-telegram-comandos.png',
