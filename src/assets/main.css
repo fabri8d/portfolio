@@ -1,0 +1,56 @@
+:root {
+  --navy: #0d1b2a;
+  --navy-light: #112236;
+  --navy-dark: #080f17;
+  --accent: #00b4d8;
+  --accent-light: #48cae4;
+  --accent-dark: #0096c7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.v-application {
+  background-color: var(--navy) !important;
+  color: #e2e8f0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.v-application .v-main {
+  background-color: var(--navy);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.font-mono {
+  font-family: ui-monospace, 'Courier New', monospace;
+}
+
+.section-label {
+  color: var(--accent);
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.dark-card {
+  background-color: var(--navy-light) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+}
+
+.dark-card:hover {
+  border-color: rgba(0, 180, 216, 0.4) !important;
+}
