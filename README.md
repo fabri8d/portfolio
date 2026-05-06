@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Fabrizio Biondi
 
-## Getting Started
+Personal portfolio built with Vue 3 + Vuetify 3, deployed on Google Cloud with Docker and Nginx.
 
-First, run the development server:
+## Stack
+
+- **Framework:** Vue 3 (Composition API, `<script setup>`)
+- **UI:** Vuetify 3 with custom dark theme
+- **Build:** Vite
+- **Router:** Vue Router 4
+- **Animations:** @vueuse/motion
+- **Tests:** Vitest + @vue/test-utils
+- **Deploy:** Docker (multi-stage) + Nginx on GCP VM
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Runs at `http://localhost:5173`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Output goes to `dist/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Tests
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm test
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
+The app is containerized with a multi-stage Dockerfile (build → Nginx). On the GCP VM, it runs behind an Nginx reverse proxy with SSL via Certbot and a DuckDNS domain.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+docker build -t portfolio .
+docker run -p 80:80 portfolio
+```
