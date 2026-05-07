@@ -4,7 +4,7 @@
     :to="href"
     style="text-decoration: none; transition: transform 0.2s, border-color 0.2s;"
   >
-    <div class="card-image-area">
+    <div class="card-image-area" :style="imageBg ? { background: imageBg } : {}">
       <img v-if="image" :src="image" :alt="title" class="card-img" :class="{ 'card-img--contain': imageContain }" />
       <div v-else class="card-placeholder">
         <div class="card-icon">
@@ -41,6 +41,7 @@ defineProps({
   href:        { type: String, required: true },
   image:        { type: String,  default: null },
   imageContain: { type: Boolean, default: false },
+  imageBg:      { type: String,  default: null },
   tags:         { type: Array,   default: () => [] },
 })
 </script>
@@ -67,7 +68,6 @@ defineProps({
 }
 .card-img--contain {
   object-fit: contain;
-  padding: 1.5rem;
 }
 .project-card:hover .card-img { opacity: 1; }
 .card-placeholder {

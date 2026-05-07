@@ -54,6 +54,7 @@ const projects = [
     href: '/projects/mobile-app',
     image: '/projects/mobile-app/logo.png',
     imageContain: true,
+    imageBg: '#ffffff',
     tags: [
       { label: 'Kotlin',          category: 'mobile' },
       { label: 'Jetpack Compose', category: 'mobile' },
