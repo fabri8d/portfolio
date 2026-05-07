@@ -47,6 +47,21 @@ const projects = [
       { label: 'GCP',              category: 'devops' },
     ],
   },
+  {
+    title: 'Lazabus — App de Accesibilidad',
+    description:
+      'App Android para asistir a personas con discapacidad visual a encontrar su ruta de colectivo. El usuario dice su destino por voz, la app calcula la ruta óptima con Haversine y la anuncia por audio sobre el mapa.',
+    href: '/projects/mobile-app',
+    image: '/projects/mobile-app/logo.png',
+    imageContain: true,
+    tags: [
+      { label: 'Kotlin',          category: 'mobile' },
+      { label: 'Jetpack Compose', category: 'mobile' },
+      { label: 'Node.js',         category: 'backend' },
+      { label: 'PostgreSQL',      category: 'database' },
+      { label: 'OpenStreetMap',   category: 'iot' },
+    ],
+  },
 ]
 </script>
 

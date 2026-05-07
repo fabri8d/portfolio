@@ -5,7 +5,7 @@
     style="text-decoration: none; transition: transform 0.2s, border-color 0.2s;"
   >
     <div class="card-image-area">
-      <img v-if="image" :src="image" :alt="title" class="card-img" />
+      <img v-if="image" :src="image" :alt="title" class="card-img" :class="{ 'card-img--contain': imageContain }" />
       <div v-else class="card-placeholder">
         <div class="card-icon">
           <span style="color: var(--accent); font-size: 1.5rem; font-weight: 700;">{{ title[0] }}</span>
@@ -39,8 +39,9 @@ defineProps({
   title:       { type: String, required: true },
   description: { type: String, required: true },
   href:        { type: String, required: true },
-  image:       { type: String, default: null },
-  tags:        { type: Array,  default: () => [] },
+  image:        { type: String,  default: null },
+  imageContain: { type: Boolean, default: false },
+  tags:         { type: Array,   default: () => [] },
 })
 </script>
 
@@ -63,6 +64,10 @@ defineProps({
   object-fit: cover;
   opacity: 0.8;
   transition: opacity 0.2s;
+}
+.card-img--contain {
+  object-fit: contain;
+  padding: 1.5rem;
 }
 .project-card:hover .card-img { opacity: 1; }
 .card-placeholder {
