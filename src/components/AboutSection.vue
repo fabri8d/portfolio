@@ -6,7 +6,7 @@
         :initial="{ opacity: 0, y: 20 }"
         :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
       >
-        <p class="section-label">Acerca de</p>
+        <p class="section-label">Perfil</p>
         <h2 class="section-title">Sobre mí</h2>
 
         <v-row class="mt-8 ga-0" align="start">
@@ -16,7 +16,7 @@
               Con experiencia como pasante IT en Dayco Belts. 
               Me interesa el desarrollo web/movil, el analisis de datos 
               y las tecnologías de infraestructura y despliegue.
-              Hablo ingles de forma fluida y alcance la certificicacion B2 FCE.
+              Hablo ingles de forma fluida y alcance la certificición B2 FCE.
             </p>
           </v-col>
 

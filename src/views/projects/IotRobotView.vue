@@ -391,6 +391,27 @@
           </div>
         </section>
 
+        <!-- Repositorios -->
+        <section class="d-flex flex-column ga-6">
+          <p class="section-label">Código fuente</p>
+          <h2 class="section-h2">Repositorios</h2>
+          <div class="repos-grid">
+            <a
+              v-for="repo in repos"
+              :key="repo.url"
+              :href="repo.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="dark-card repo-card"
+            >
+              <GithubIcon :size="22" class="repo-icon" />
+              <div>
+                <p class="repo-name">{{ repo.name }}</p>
+                <p class="repo-desc">{{ repo.desc }}</p>
+              </div>
+            </a>
+          </div>
+        </section>
 
       </v-container>
     </v-main>
@@ -413,6 +434,7 @@ import TheFooter from '../../components/TheFooter.vue'
 import ProjectHeader from '../../components/ProjectHeader.vue'
 import GrafanaEmbed from '../../components/GrafanaEmbed.vue'
 import TechBadge from '../../components/TechBadge.vue'
+import GithubIcon from '../../components/icons/GithubIcon.vue'
 
 const lightboxSrc = ref(null)
 function openLightbox(src) { lightboxSrc.value = src }
@@ -572,6 +594,19 @@ const botFeatures = [
   { type: 'Automático', label: 'Alerta reactiva', desc: 'Si la lectura supera el umbral, n8n inserta en tabla alarmas y notifica al instante.' },
   { type: 'Automático', label: 'Reporte diario',  desc: 'Todos los días a las 8am, n8n genera y envía un resumen del día anterior.' },
   { type: 'Automático', label: 'Reporte semanal', desc: 'Los domingos a las 8am, resumen semanal con evolución de la calidad del aire.' },
+]
+
+const repos = [
+  {
+    name: 'fabri8d/Pepe',
+    desc: 'Firmware ESP32 (FreeRTOS), sensores, pipeline MQTT y monitoreo de calidad de aire.',
+    url: 'https://github.com/fabri8d/Pepe'
+  },
+  {
+    name: 'fabri8d/Pepe-MLP',
+    desc: 'Modelo MLP en Python para navegación autónoma reactiva.',
+    url: 'https://github.com/fabri8d/Pepe-MLP'
+  }
 ]
 </script>
 
@@ -1042,4 +1077,28 @@ const botFeatures = [
   .ml-arrow::before { font-size: 1.25rem; color: rgba(0,180,216,0.5); }
   .tg-screenshots { grid-template-columns: 1fr; }
 }
+
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.repo-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+.repo-card:hover { transform: translateY(-2px); }
+.repo-icon { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+.repo-name {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+.repo-desc { font-size: 0.82rem; color: #94a3b8; margin: 0; line-height: 1.5; }
 </style>

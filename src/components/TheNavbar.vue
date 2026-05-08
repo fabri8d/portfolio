@@ -10,14 +10,14 @@
       </router-link>
 
       <nav class="d-none d-md-flex align-center ga-8">
-        <a
+        <router-link
           v-for="link in links"
-          :key="link.href"
-          :href="link.href"
+          :key="link.label"
+          :to="link.to"
           class="text-decoration-none nav-link"
         >
           {{ link.label }}
-        </a>
+        </router-link>
         <a href="/cv.pdf" download class="cv-link">
           <Download :size="14" style="margin-right: 0.35rem;" />
           Descargar CV
@@ -36,16 +36,16 @@
 
   <Transition name="slide-down">
     <div v-show="isOpen" class="mobile-menu d-md-none">
-      <a
+      <router-link
         v-for="link in links"
-        :key="link.href"
-        :href="link.href"
+        :key="link.label"
+        :to="link.to"
         class="mobile-menu__item"
         style="min-height: 52px"
         @click="isOpen = false"
       >
         {{ link.label }}
-      </a>
+      </router-link>
       <hr class="mobile-menu__divider" />
       <a
         href="/cv.pdf"
@@ -66,9 +66,9 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { Download } from 'lucide-vue-next'
 
 const links = [
-  { href: '#sobre-mi', label: 'Sobre mí' },
-  { href: '#proyectos', label: 'Proyectos' },
-  { href: '#contacto', label: 'Contacto' },
+  { to: { path: '/', hash: '#sobre-mi'  }, label: 'Sobre mí'   },
+  { to: { path: '/', hash: '#proyectos' }, label: 'Proyectos'  },
+  { to: { path: '/', hash: '#contacto'  }, label: 'Contacto'   },
 ]
 
 const isOpen = ref(false)

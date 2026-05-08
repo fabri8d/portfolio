@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/projects/mobile-app',
       component: () => import('../views/projects/MobileAppView.vue'),
-      meta: { title: 'App Accesibilidad — Fabrizio Biondi' },
+      meta: { title: 'Lazabus — Fabrizio Biondi' },
     },
   ],
   scrollBehavior(to) {

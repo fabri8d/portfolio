@@ -31,11 +31,11 @@ describe('TheNavbar', () => {
   })
 
   it('los links tienen los hrefs correctos', () => {
-    const links = wrapper.findAll('a[href^="#"]')
+    const links = wrapper.findAll('a[href*="#"]')
     const hrefs = links.map((l) => l.attributes('href'))
-    expect(hrefs).toContain('#sobre-mi')
-    expect(hrefs).toContain('#proyectos')
-    expect(hrefs).toContain('#contacto')
+    expect(hrefs).toContain('/#sobre-mi')
+    expect(hrefs).toContain('/#proyectos')
+    expect(hrefs).toContain('/#contacto')
   })
 
   it('el menú mobile empieza cerrado', () => {
