@@ -7,7 +7,7 @@
         :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
         class="mb-12"
       >
-        <p class="section-label">Trabajo</p>
+        <p class="section-label">Portafolio</p>
         <h2 class="section-title">Proyectos</h2>
       </div>
 

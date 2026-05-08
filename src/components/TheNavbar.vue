@@ -66,9 +66,11 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { Download } from 'lucide-vue-next'
 
 const links = [
-  { to: { path: '/', hash: '#sobre-mi'  }, label: 'Sobre mí'   },
-  { to: { path: '/', hash: '#proyectos' }, label: 'Proyectos'  },
-  { to: { path: '/', hash: '#contacto'  }, label: 'Contacto'   },
+  { to: { path: '/', hash: '#sobre-mi'    }, label: 'Sobre mí'    },
+  { to: { path: '/', hash: '#experiencia' }, label: 'Experiencia' },
+  { to: { path: '/', hash: '#proyectos'   }, label: 'Proyectos'   },
+  { to: { path: '/', hash: '#busqueda'    }, label: 'Trabajo'     },
+  { to: { path: '/', hash: '#contacto'    }, label: 'Contacto'    },
 ]
 
 const isOpen = ref(false)
